@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 import FetchWeather from './components/FetchWeather';
 import WeatherForecast from './components/WeatherForecast'
+import Pagenotfound from './components/Page_not_found';
 import { useState } from 'react';
 import Navbar from './components/Navbar';
 
@@ -17,6 +18,7 @@ function App() {
           <Routes>
             <Route path="/" element={<FetchWeather search={search} />} />
             <Route path="weather_forecast" element={<WeatherForecast search={search} />} />
+            <Route path='*' element={<Pagenotfound/>}/>
           </Routes>
         </div>
       </>
