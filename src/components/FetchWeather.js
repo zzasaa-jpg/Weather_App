@@ -12,8 +12,7 @@ function FetchWeather({ search }) {
                 let response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${search}&appid=${apiKey}`);
                 let data = await response.json();
                 setWeather(data);
-                setLoader(false)
-                console.log(data);
+                setLoader(false);
             } catch (error) {
                 console.log(error);
                 setLoader(false)
@@ -67,10 +66,10 @@ function FetchWeather({ search }) {
                                             <h1 className=' text-[18px] sm:text-[20px] md:text-[23px] lg:text-[25px]'>Desc: {weather.weather[0].description}
                                             </h1>
 
-                                            <h1 className=' text-[18px] sm:text-[20px] md:text-[23px] lg:text-[25px]'>Humidity: {weather.main.humidity} %
+                                            <h1 className=' text-[18px] sm:text-[20px] md:text-[23px] lg:text-[25px]'>Humidity: {weather.main.humidity}%
                                             </h1>
 
-                                            <h1 className=' text-[18px] sm:text-[20px] md:text-[23px] lg:text-[25px]'>Clouds: {weather.clouds.all} %
+                                            <h1 className=' text-[18px] sm:text-[20px] md:text-[23px] lg:text-[25px]'>Clouds: {weather.clouds.all}%
                                             </h1>
 
                                             <h1 className=' text-[18px] sm:text-[20px] md:text-[23px] lg:text-[25px]'>Sea_level: {weather.main.sea_level ? weather.main.sea_level : "N/A"}
@@ -78,9 +77,9 @@ function FetchWeather({ search }) {
 
                                             <h1 className=' text-[18px] sm:text-[20px] md:text-[23px] lg:text-[25px] '>Grnd_level: {weather.main.grnd_level ? weather.main.grnd_level : "N/A"}</h1>
 
-                                            <h1 className=' text-[18px] sm:text-[20px] md:text-[23px] lg:text-[25px] '>Visibility: {parseInt(weather.visibility / 1000)} Km</h1>
+                                            <h1 className=' text-[18px] sm:text-[20px] md:text-[23px] lg:text-[25px] '>Visibility: {parseInt(weather.visibility / 1000)}Km</h1>
 
-                                            <h1 className=' text-[18px] sm:text-[20px] md:text-[23px] lg:text-[25px] '>Wind: {parseInt(weather.wind.speed * 3.6)} Km/h
+                                            <h1 className=' text-[18px] sm:text-[20px] md:text-[23px] lg:text-[25px] '>Wind: {parseInt(weather.wind.speed * 3.6)}Km/h
                                             </h1>
                                         </div>
 

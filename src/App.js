@@ -12,7 +12,7 @@ function App() {
   return (
     <BrowserRouter>
       <>
-        <div className="App bg-[#ff0000] font-poppins">
+        <div className="App bg-[#ff0000] font-exo">
           <Navbar setSearch={setSearch} />
           <Routes>
             <Route path="/" element={<FetchWeather search={search} />} />
