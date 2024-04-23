@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from './logo.png';
-import '../App.css'
+import '../App.css';
 
 function Navbar({ setSearch }) {
   let [isOpen, setIsOpen] = useState(false);

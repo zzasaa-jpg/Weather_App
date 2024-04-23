@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import Loader from './Loader'
+import React, { useEffect, useState } from 'react';
+import Loader from './Loader';
 
 function FetchWeather({ search }) {
     let [weather, setWeather] = useState()
