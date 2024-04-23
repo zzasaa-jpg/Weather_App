@@ -61,7 +61,7 @@ function FetchWeather({ search }) {
                             {weather.list.map((item, index) => {
                                 return (
                                     //  Weather forecast details
-                                    <div className='flex '>
+                                    <div className='flex ' key={index}>
                                         <div key={index} className='bg-[#ffffff36] text-white shadow-2xl w-[350px] h-[300px] my-[10px] px-[10px] sm:w-[500px] sm:h-[340px]  md:w-[550px] md:h-[390px] lg:w-[600px] lg:h-[430px] rounded-[10px] lg:px-[15px] '>
                                             <div className='flex items-center justify-between my-1'>
                                                 {/* Render temperature */}

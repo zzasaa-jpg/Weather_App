@@ -6,17 +6,16 @@ import '../App.css';
 
 function Navbar({ setSearch }) {
   let [isOpen, setIsOpen] = useState(false);
-  let [serchTerm, setSearchTerm] = useState('');
 
   let handleSubmit = (event) => {
-    event.preventDefault();
-    setSearch(serchTerm)
-    setSearchTerm("");
+    if (event.key === 'Enter') {
+      setSearch(event.target.value);
+    }
   }
 
   let handleKeyPress = (event) => {
     if (event.key === 'Enter') {
-      handleSubmit(event);
+      setSearch(event.target.value);
     }
   }
 
@@ -34,14 +33,11 @@ function Navbar({ setSearch }) {
       </div>
       <button className={'flex lg:hidden text-[30px] text-white border rounded-[4px] shadow-xl bg-[#00000025] cursor-pointer'} onClick={() => setIsOpen(!isOpen)}>{
         isOpen ? <ion-icon name="close-outline"></ion-icon> : <ion-icon name="add-outline"></ion-icon>}</button>
-      <form onSubmit={handleSubmit}>
         <input type='text'
           placeholder='Search....'
-          value={serchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
+          onChange={handleSubmit}
           onKeyPress={handleKeyPress}
           className='bg-[#ffffff36] text-white py-[2px] px-[10px] sm:p-[6px] lg:p-[8px] text-[19px] rounded-[4px] placeholder-white w-44 sm:w-56 md:w-72  lg:w-96' />
-      </form>
     </nav>
   )
 }
