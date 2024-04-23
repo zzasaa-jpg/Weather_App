@@ -8,7 +8,7 @@ import { useState } from 'react';
 import Navbar from './components/Navbar';
 
 function App() {
-  let [search, setSearch] = useState()
+  let [search, setSearch] = useState("")
 
   return (
     <BrowserRouter>
